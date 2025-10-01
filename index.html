@@ -22,21 +22,25 @@ Unofficial student page. 'International Space University' named here for study u
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --isu-pink: #f5a5c0;
+            --isu-dark-pink: #e3778c;
             --isu-blue: #0b3d91;
-            --isu-gold: #f0b429;
             --isu-ink: #0d1b2a;
             --isu-sky: #e6f1ff;
-            --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-stack: 'Inter', sans-serif;
+            --transition-time: 0.3s;
         }
 
         body {
             font-family: var(--font-stack);
-            background-color: var(--isu-pink);
+            background-color: var(--isu-sky);
             color: var(--isu-ink);
+            transition: background-color var(--transition-time), color var(--transition-time);
         }
 
         .navbar {
@@ -48,9 +52,13 @@ Unofficial student page. 'International Space University' named here for study u
         }
 
         .hero {
-            background-color: var(--isu-sky);
+            background-color: var(--isu-pink);
             padding: 4rem 2rem;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            transition: background-color var(--transition-time);
         }
 
         .hero h1 {
@@ -63,11 +71,36 @@ Unofficial student page. 'International Space University' named here for study u
         }
 
         section {
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            color: var(--isu-dark-pink);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box {
+            background-color: var(--isu-dark-pink);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color var(--transition-time), color var(--transition-time);
+        }
+
+        .info-box h3 {
+            color: var(--isu-blue);
         }
 
         .card {
             margin-bottom: 2rem;
+            transition: transform var(--transition-time);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
         }
 
         footer {
@@ -75,16 +108,6 @@ Unofficial student page. 'International Space University' named here for study u
             padding: 2rem;
             background-color: var(--isu-ink);
             color: white;
-        }
-
-        .dark-theme {
-            background-color: var(--isu-ink);
-            color: white;
-        }
-
-        .light-theme {
-            background-color: var(--isu-sky);
-            color: black;
         }
 
         button#themeToggle {
@@ -109,6 +132,28 @@ Unofficial student page. 'International Space University' named here for study u
 
         .focus-tools h3 {
             color: var(--isu-blue);
+        }
+
+        .dark-theme {
+            background-color: var(--isu-ink);
+            color: white;
+        }
+
+        .light-theme {
+            background-color: var(--isu-sky);
+            color: black;
+        }
+
+        .theme-btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .theme-btn-container button {
+            background-color: var(--isu-pink);
+            border-radius: 50%;
+            padding: 10px;
+            transition: background-color var(--transition-time);
         }
 
     </style>
@@ -158,108 +203,72 @@ Unofficial student page. 'International Space University' named here for study u
         </section>
 
         <section id="about">
-            <h2>About</h2>
-            <p>Siya Dave is a physics graduate with a deep passion for space exploration. Currently pursuing a Master of Space Studies (MSS) with a focus on the Space Exploration track at the International Space University (ISU). Her research interests include astrophysics, space science, and science outreach.</p>
-            
-            <div class="focus-tools">
-                <div>
-                    <h3>Focus Areas</h3>
-                    <ul>
-                        <li>Astrophysics</li>
-                        <li>Space Science</li>
-                        <li>Science Outreach</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>Microsoft</li>
-                        <li>Python</li>
-                    </ul>
+            <div class="info-box">
+                <h2>About</h2>
+                <p>Siya Dave is a physics graduate with a deep passion for space exploration. Currently pursuing a Master of Space Studies (MSS) with a focus on the Space Exploration track at the International Space University (ISU). Her research interests include astrophysics, space science, and science outreach.</p>
+            </div>
+        </section>
+
+        <section id="focus">
+            <div class="info-box">
+                <h2>Focus Areas</h2>
+                <div class="focus-tools">
+                    <div>
+                        <h3>Astrophysics</h3>
+                        <ul>
+                            <li>Exoplanet detection</li>
+                            <li>Gravitational lensing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Space Science</h3>
+                        <ul>
+                            <li>Cosmic radiation</li>
+                            <li>Space missions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Science Outreach</h3>
+                        <ul>
+                            <li>Educational programs</li>
+                            <li>Public lectures</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section id="tools">
+            <div class="info-box">
+                <h2>Tools</h2>
+                <ul>
+                    <li>Microsoft</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+        </section>
+
         <section id="experience">
-            <h2>Experience</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Youth Empowerment Volunteer</h5>
-                    <p>Think Pacific, Fiji — Jul–Aug 2022</p>
-                    <p>Delivered workshops focused on leadership, education, and health awareness for youth in Fiji.</p>
-                    <ul>
-                        <li>Collaborated with local communities to design and execute outreach programs</li>
-                        <li>Helped develop sustainable, SDG-aligned educational resources for local schools</li>
-                    </ul>
+            <div class="info-box">
+                <h2>Experience</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Youth Empowerment Volunteer</h5>
+                        <p>Think Pacific, Fiji — Jul–Aug 2022</p>
+                        <p>Delivered workshops focused on leadership, education, and health awareness for youth in Fiji.</p>
+                        <ul>
+                            <li>Collaborated with local communities to design and execute outreach programs</li>
+                            <li>Helped develop sustainable, SDG-aligned educational resources for local schools</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="cv">
-            <h2>CV</h2>
-            <p>If you'd like to view my CV, please <span id="cvNote">add <code>cv.pdf</code> to enable the CV button.</span></p>
-            <a href="#" id="cvBtn" class="btn btn-primary" style="display: none;">Open CV</a>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <span id="email">siyajdave@yahoo.com</span></p>
-            <a href="mailto:siyajdave@yahoo.com" id="mailLink" class="btn btn-primary">Email Me</a>
-            <button id="copyEmailBtn" class="btn btn-outline-primary">Copy Email</button>
-        </section>
-
-        <section id="edit-checklist">
-            <h2>Edit Checklist</h2>
-            <ul>
-                <li>Projects: Add links for code/demo if available</li>
-                <li>CV: Ensure <code>cv.pdf</code> is in the repo for the CV button to work</li>
-                <li>Profile image: Upload <code>profile.jpg</code> in the root for better display</li>
-            </ul>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; <span id="year"></span> Siya Dave - Unofficial student page. "International Space University" named here for study use only.</p>
-    </footer>
-
-    <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.body.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Check for CV file
-        fetch('cv.pdf', { method: 'HEAD' }).then((response) => {
-            if (response.ok) {
-                document.getElementById('cvBtn').style.display = 'inline-block';
-                document.getElementById('cvNote').style.display = 'none';
-            }
-        });
-
-        // Email copy functionality
-        document.getElementById('copyEmailBtn').addEventListener('click', () => {
-            const email = document.getElementById('email').textContent;
-            navigator.clipboard.writeText(email).then(() => {
-                alert('Email copied to clipboard!');
-            });
-        });
-    </script>
-
-    <!--
-```
-
-
-Bootstrap 5 JS --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+            <div class="info-box">
+                <h2>CV</h2>
+                <p>If you'd like to view my CV, please <span id="cvNote">add <code>cv.pdf</code> to enable the CV button.</span></p>
+                <a href="#" id="cvBtn" class="btn btn-primary" style="display: none;">Open CV</a>
+            </div>
 ```
